@@ -1,0 +1,5 @@
+{
+    "langServerName" : "Risc V Assembly Language Server",
+    "langServerNameId" : "riscvasmlang",
+    "greeting" : "Hello World from Risc V Assembly Language Server"
+}
