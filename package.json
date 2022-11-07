@@ -1,83 +1,91 @@
 {
-    "name": "riscvasm",
-    "displayName": "Risc V Assembly Language",
-    "description": "",
-    "version": "0.0.1",
-    "publisher": "Tao Liu",
-    "repository": {
-        "type": "svn",
-        "url": "https://localhost/"
-    },
-    "icon" : "images/icon.png",
-    "license": "SEE LICENSE IN LICENSE.md",
-    "engines": {
-        "vscode": "^1.52.0"
-    },
-    "categories": [
-        "Programming Languages",
-        "Linters"
+  "name": "riscvasm",
+  "displayName": "Risc V Assembly Language",
+  "description": "",
+  "version": "0.0.1",
+  "publisher": "Tao Liu",
+  "repository": {
+    "type": "svn",
+    "url": "https://localhost/"
+  },
+  "icon": "images/icon.png",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "engines": {
+    "vscode": "^1.52.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
+  "activationEvents": [
+    "onCommand:extensions.riscv.sayHello",
+    "onLanguage:riscvasm"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extensions.riscv.sayHello",
+        "title": "Risc V Hello World"
+      }
     ],
-    "activationEvents": [
-        "onCommand:extensions.riscv.sayHello",
-        "onLanguage:riscvasm"
+    "languages": [
+      {
+        "id": "riscvasm",
+        "aliases": [
+          "Risc V Assembly Language"
+        ],
+        "extensions": [
+          ".rvasm"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extensions.riscv.sayHello", 
-                "title": "Risc V Hello World"
-            }
-        ],
-        "languages": [
-            {
-                "id": "riscvasm",
-                "aliases": [
-                    "Risc V Assembly Language"
-                ],
-                "extensions": [
-                    ".rvasm"
-                ]
-            }
-        ],
-        "configuration": {
-            "type": "object",
-            "title": "Example configuration",
-            "properties": {
-                "demoLanguageServer.maxNumberOfProblems": {
-                    "type": "number",
-                    "default": 100,
-                    "description": "Controls the maximum number of problems produced by the server."
-                },
-                "demoLanguageServer.trace.server": {
-                    "scope": "window",
-                    "type": "string",
-                    "enum": [
-                        "off",
-                        "messages",
-                        "verbose"
-                    ],
-                    "default": "off",
-                    "description": "Traces the communication between VSCode and the demoLanguageServer service."
-                }
-            }
+    "grammars": [
+      {
+        "language": "riscvasm",
+        "scopeName": "source.rvasm",
+        "path": "./syntaxes/riscvasm.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Example configuration",
+      "properties": {
+        "demoLanguageServer.maxNumberOfProblems": {
+          "type": "number",
+          "default": 100,
+          "description": "Controls the maximum number of problems produced by the server."
+        },
+        "demoLanguageServer.trace.server": {
+          "scope": "window",
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between VSCode and the demoLanguageServer service."
         }
-    },
-    "extensionDependencies": [],
-    "scripts": {
-        "compile": "tsc -b",
-        "watch": "tsc -b -w",
-        "test": "mocha --require ts-node/register --timeout 3600000 test/**/*.test.ts"
-    },
-    "devDependencies": {
-        "typescript": "^4.1.3",
-        "tslint": "^6.1.0",
-        "@types/vscode": "^1.52.0",
-        "mocha": "^8.2.1",
-        "@types/node": "^14.14.21",
-        "@types/mocha": "^8.2.0"
-    },
-    "dependencies": {
-        "vscode-languageclient": "^7.0.0"
+      }
     }
+  },
+  "extensionDependencies": [],
+  "scripts": {
+    "compile": "tsc -b",
+    "watch": "tsc -b -w",
+    "test": "mocha --require ts-node/register --timeout 3600000 test/**/*.test.ts"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3",
+    "tslint": "^6.1.0",
+    "@types/vscode": "^1.52.0",
+    "mocha": "^8.2.1",
+    "@types/node": "^14.14.21",
+    "@types/mocha": "^8.2.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^7.0.0"
+  }
 }

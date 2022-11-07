@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "riscvasm",
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.riscvasm",
+          "match": "\\b(ADD|SUB|SLL|SLT|SLTU|XOR|SRL|SRA|OR|AND|ADDI|SLTI|SLTIU|XORI|ORI|ANDI|SLLI|SRLI|SRAI|LB|LH|LW|LBU|LHU|SB|SH|SW|BEQ|BNE|BLT|BGE|BLTU|BGEU|LUI|AUIPC|JAL|JALR|MUL|MULH|MULHSU|MULHU|DIV|DIVU|REM|REMU|ECALL|EBREAK|FENCE_v|FENCE_I|LR_W|SC_W|AMOSWAP_W|AMOADD_W|AMOXOR_W|AMOAND_W|AMOOR_W|AMOMIN_W|AMOMAX_W|AMOMINU_W|AMOMAXU_W)\\b"
+        },
+        {
+          "name": "variable.parameter.riscvasm",
+          "match": "\\b(x0)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.riscvasm",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.riscvasm",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "begin": "(^\\s+)?(?=#)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.whitespace.comment.leading.riscvasm"
+            }
+          },
+          "end": "(?=$)",
+          "patterns": [
+            {
+              "name": "comment.line.riscvasm",
+              "begin": "(?<!/)#(?:(?!/)|(?=#))",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.riscvasm"
+                }
+              },
+              "end": "(?=$)"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
