@@ -48,6 +48,19 @@
         "path": "./syntaxes/riscvasm.tmLanguage.json"
       }
     ],
+    "configurationDefaults": {
+      "editor.insertSpaces": false,
+      "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "scope": "string.tag",
+            "settings": {
+              "foreground": "#ff8800"
+            }
+          }
+        ]
+      }
+    },
     "configuration": {
       "type": "object",
       "title": "Example configuration",

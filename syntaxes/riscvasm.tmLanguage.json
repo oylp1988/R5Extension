@@ -6,6 +6,9 @@
       "include": "#comment"
     },
     {
+      "include": "#variables"
+    },
+    {
       "include": "#keywords"
     },
     {
@@ -17,11 +20,23 @@
       "patterns": [
         {
           "name": "keyword.control.riscvasm",
-          "match": "\\b(ADD|SUB|SLL|SLT|SLTU|XOR|SRL|SRA|OR|AND|ADDI|SLTI|SLTIU|XORI|ORI|ANDI|SLLI|SRLI|SRAI|LB|LH|LW|LBU|LHU|SB|SH|SW|BEQ|BNE|BLT|BGE|BLTU|BGEU|LUI|AUIPC|JAL|JALR|MUL|MULH|MULHSU|MULHU|DIV|DIVU|REM|REMU|ECALL|EBREAK|FENCE_v|FENCE_I|LR_W|SC_W|AMOSWAP_W|AMOADD_W|AMOXOR_W|AMOAND_W|AMOOR_W|AMOMIN_W|AMOMAX_W|AMOMINU_W|AMOMAXU_W)\\b"
+          "match": "\\b(ADD|SUB|SLL|SLT|SLTU|XOR|SRL|SRA|OR|AND|ADDI|SLTI|SLTIU|XORI|ORI|ANDI|SLLI|SRLI|SRAI|LB|LH|LW|LBU|LHU|SB|SH|SW|BEQ|BNE|BLT|BGE|BLTU|BGEU|LUI|AUIPC|JAL|JALR|MUL|MULH|MULHSU|MULHU|DIV|DIVU|REM|REMU|ECALL|EBREAK|FENCE_v|FENCE_I|LR_W|SC_W|AMOSWAP_W|AMOADD_W|AMOXOR_W|AMOAND_W|AMOOR_W|AMOMIN_W|AMOMAX_W|AMOMINU_W|AMOMAXU_W|LA|add|sub|sll|slt|sltu|xor|srl|sra|or|and|addi|slti|sltiu|xori|ori|andi|slli|srli|srai|lb|lh|lw|lbu|lhu|sb|sh|sw|beq|bne|blt|bge|bltu|bgeu|lui|auipc|jal|jalr|mul|mulh|mulhsu|mulhu|div|divu|rem|remu|ecall|ebreak|fence_v|fence_i|lr_w|sc_w|amoswap_w|amoadd_w|amoxor_w|amoand_w|amoor_w|amomin_w|amomax_w|amominu_w|amomaxu_w|la)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "entity.name.tag",
+          "match": "\\.(\\w)*"
         },
         {
-          "name": "variable.parameter.riscvasm",
-          "match": "\\b(x0)\\b"
+          "name": "entity.name.tag",
+          "match": "\\b(_start)\\b"
+        },
+        {
+          "name": "variable.name",
+          "match": "\\b(X0|X1|X2|X3|X4|X5|X6|X7|X8|X9|X10|X11|X12|X13|X14|X15|X16|X17|X18|X19|X20|X21|X22|X23|X24|X25|X26|X27|X28|X29|X30|X31|x0|x1|x2|x3|x4|x5|x6|x7|x8|x9|x10|x11|x12|x13|x14|x15|x16|x17|x18|x19|x20|x21|x22|x23|x24|x25|x26|x27|x28|x29|x30|x31|A0|A1|A2|A3|A4|A5|A6|A7|A8|A9|A10|A11|A12|A13|A14|A15|A16|A17|A18|A19|A20|A21|A22|A23|A24|A25|A26|A27|A28|A29|A30|A31|a0|a1|a2|a3|a4|a5|a6|a7|a8|a9|a10|a11|a12|a13|a14|a15|a16|a17|a18|a19|a20|a21|a22|a23|a24|a25|a26|a27|a28|a29|a30|a31)\\b"
         }
       ]
     },
@@ -61,5 +76,6 @@
         }
       ]
     }
-  }
+  },
+  "scopeName": "source.rvasm"
 }
